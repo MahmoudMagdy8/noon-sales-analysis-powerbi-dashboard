@@ -3,7 +3,7 @@
 An interactive 4-page Power BI dashboard that analyzes sales performance across products, categories, customers and locations.
 
 > **Tools:** Power BI Desktop · DAX · Star Schema Data Modeling
-> **Data source:** _[write the source here, e.g. Kaggle dataset name / link]_
+
 
 ## Business Questions
 
