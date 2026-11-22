@@ -1,96 +1,164 @@
-# Sales Analysis Dashboard (Power BI)
+# Sales Analysis Dashboard \| Power BI
 
-An interactive 4-page Power BI dashboard that analyzes sales performance across products, categories, customers and locations.
+An interactive, 4-page Power BI dashboard built to explore sales
+performance across products, categories, customers, and locations.
 
-> **Tools:** Power BI Desktop · DAX · Star Schema Data Modeling
+## Project Overview
 
+This project provides a consolidated view of sales performance and
+profitability. It helps users explore key business metrics, compare
+product and category performance, monitor monthly sales trends, and
+understand customer behavior across genders and states.
+
+**Tools & Technologies** - Power BI Desktop - DAX - Star Schema Data
+Modeling
 
 ## Business Questions
 
-- How much are we selling and how profitable is it?
-- Which products and categories drive the most sales, quantity and profit?
-- How do sales change month by month?
-- Who are the top customers, and how do customers differ by gender and state?
+The dashboard is designed to answer the following business questions:
+
+-   How much are we selling, and how profitable are sales?
+-   Which products and categories contribute the most to sales,
+    quantity, and profit?
+-   How do sales change from month to month?
+-   Who are the top customers?
+-   How does customer behavior differ by gender and state?
 
 ## Data Model
 
-The model follows a **star schema**: one fact table connected to five dimension tables.
+The data model follows a **Star Schema**, with one fact table connected
+to five dimension tables.
 
-| Table | Type | Used for |
-|---|---|---|
-| `Fact_Sales` | Fact | Sales Amount, Quantity, Total Cost, Total Profit |
-| `Dim_Product` | Dimension | Product name, unit price, average selling price / unit cost |
-| `Dim_Category` | Dimension | Category name |
-| `Dim_Customer` | Dimension | Customer name, gender, customer KPIs |
-| `Dim_Location` | Dimension | State |
-| `Dim_Date` | Dimension | Month name / time analysis |
+  -----------------------------------------------------------------------
+  Table                   Type                    Description
+  ----------------------- ----------------------- -----------------------
+  `Fact_Sales`            Fact                    Sales amount, quantity,
+                                                  total cost, and total
+                                                  profit
 
-**Key measures:** Total Sales, Total Profit, Total Cost, Quantity Sold, Avg Selling Price, Avg Unit Cost, Total Customers, Sales per Customer, Profit per Customer, Orders per Customer.
+  `Dim_Product`           Dimension               Product name, unit
+                                                  price, average selling
+                                                  price, and unit cost
+
+  `Dim_Category`          Dimension               Product category
+
+  `Dim_Customer`          Dimension               Customer name, gender,
+                                                  and customer-related
+                                                  attributes
+
+  `Dim_Location`          Dimension               State or sales location
+
+  `Dim_Date`              Dimension               Date attributes used
+                                                  for monthly and
+                                                  time-based analysis
+  -----------------------------------------------------------------------
+
+## Key Measures
+
+The report includes the following measures:
+
+-   Total Sales
+-   Total Profit
+-   Total Cost
+-   Quantity Sold
+-   Average Selling Price
+-   Average Unit Cost
+-   Total Customers
+-   Sales per Customer
+-   Profit per Customer
+-   Orders per Customer
 
 ## Dashboard Pages
 
 ### 1. Home
-Landing page with navigation buttons to the other pages.
 
-![Home](images/01_home.png)
+A landing page with navigation buttons to access the other report pages.
+
+![Home page](images/01_home.png)
 
 ### 2. Sales Overview
-- KPI cards: **Total Sales**, **Total Profit**, **Quantity Sold**
-- Top 10 products by sales
-- Sales amount by category
-- Sales amount by month (trend)
-- Slicers: State, Category, Gender, Product, Month
 
-![Sales Overview](images/02_sales_overview.png)
+A high-level view of sales performance, including:
+
+-   KPI cards for **Total Sales**, **Total Profit**, and **Quantity
+    Sold**
+-   Top 10 products by sales
+-   Sales amount by category
+-   Monthly sales trend
+-   Slicers for State, Category, Gender, Product, and Month
+
+![Sales Overview page](images/02_sales_overview.png)
 
 ### 3. Products
-- Top 5 products by quantity sold
-- Top 7 products by cost & profit
-- Category vs. unit price
-- Avg selling price and avg unit cost cards
 
-![Products](images/03_products.png)
+A product-focused page that includes:
+
+-   Top 5 products by quantity sold
+-   Top 7 products by cost and profit
+-   Category comparison by unit price
+-   KPI cards for average selling price and average unit cost
+
+![Products page](images/03_products.png)
 
 ### 4. Customers
-- Total customers, sales / profit / orders per customer
-- Top 7 customers by sales
-- Quantity split by gender (donut chart)
-- Customers by state
 
-![Customers](images/04_customers.png)
+A customer-focused page featuring:
+
+-   Total customers
+-   Sales, profit, and orders per customer
+-   Top 7 customers by sales
+-   Quantity distribution by gender
+-   Customer distribution by state
+
+![Customers page](images/04_customers.png)
 
 ## Interactivity
 
-- Cross-filtering slicers on every page (State, Category, Gender, Product, Month)
-- Bookmarks to open / close the slicer panel
-- Page navigation buttons
+The report includes:
 
-## Key Insights
+-   Cross-filtering slicers across the report pages
+-   Slicers for State, Category, Gender, Product, and Month
+-   Bookmarks to show or hide the slicer panel
+-   Page navigation buttons
 
-_Fill these with your real findings from the dashboard, for example:_
+## Analysis Scope
 
-1. **Top category:** ... generates ...% of total sales.
-2. **Best-selling product:** ... with ... units sold.
-3. **Seasonality:** sales peak in ... and drop in ...
-4. **Customers:** the top 7 customers account for ...% of sales.
+The dashboard supports analysis of:
+
+-   Overall sales and profitability
+-   Product and category performance
+-   Monthly sales movement
+-   Customer contribution and purchasing behavior
+-   Sales distribution by gender and state
+
+The report is intended to help users identify performance patterns and
+explore the factors contributing to sales and profit.
 
 ## Repository Structure
 
-```
+``` text
+.
 ├── README.md
 ├── dashboard/
-│   └── task_8.pbix
-├── data/            (dataset or a link to it)
-└── images/          (dashboard screenshots)
+│   └── noon_sales_analysis.pbix
+├── data/
+│   └── source dataset (if shared separately)
+└── images/
+    ├── 01_home.png
+    ├── 02_sales_overview.png
+    ├── 03_products.png
+    └── 04_customers.png
 ```
 
-## How to Open
+## How to Open the Dashboard
 
-1. Download `dashboard/task_8.pbix`.
-2. Open it with **Power BI Desktop** (free, Windows).
-3. If Power BI asks for the data source, point it to the files in `data/`.
+1.  Download the Power BI file from the `dashboard` folder.
+2.  Open it using **Power BI Desktop**.
+3.  If Power BI requests the data source, reconnect it to the source
+    dataset.
+4.  Refresh the data if required.
 
 ## Author
 
-**Mahmoud Magdy Barakat** — Accounting student & aspiring Data Analyst
-[LinkedIn](#) · [GitHub](#)
+**Mahmoud Magdy Barakat**\
+Data Analyst
